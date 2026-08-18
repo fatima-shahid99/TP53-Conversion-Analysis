@@ -15,7 +15,17 @@ Protein sequences were retrieved from NCBI RefSeq:
 - Frog: NP_001001903.1
 
 ## Domain Boundaries
-Functional domain boundaries were based on a 2026 review published in Nature (Signal Transduction and Targeted Therapy): https://www.nature.com/articles/s41392-025-02549-5
+Functional domain boundaries were based on the following peer-reviewed source:
+
+> Wang, et al. "p53: from understanding its structure to advances in therapeutic targeting." *Signal Transduction and Targeted Therapy* (2026).
+> Link: https://www.nature.com/articles/s41392-025-02549-5
+
+The five domains used were:
+- Transactivation domain (TAD): 1-61
+- Proline-rich domain (PRD): 62-94
+- DNA-binding domain (DBD): 95-292
+- Tetramerization domain (TD): 325-356
+- C-terminal regulatory domain (CTD): 357-393
 
 ## Methods
 1. Fetched TP53 protein sequences from NCBI using Biopython's Entrez module
@@ -27,7 +37,7 @@ Functional domain boundaries were based on a 2026 review published in Nature (Si
 ## Key Results
 - Overall average conservation across species: 58.7%
 - Highly conserved positions (≥90% identity): 105 out of 396
-- DNA-binding domain (DBD, 95-292) showed the highest conservation (74.1%), followed by the tetramerization domain (65.6%)
+- DNA-binding domain (DBD) showed the highest conservation (74.1%), followed by the tetramerization domain (65.6%)
 - BLAST comparison of the DBD region (Human vs. each species) confirmed a clear evolutionary gradient:
   - Mouse: 88.72% identity
   - Chicken: 72.83% identity
