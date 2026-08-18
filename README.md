@@ -14,23 +14,31 @@ Protein sequences were retrieved from NCBI RefSeq:
 - Zebrafish: NP_001258749.1
 - Frog: NP_001001903.1
 
+## Domain Boundaries
+Functional domain boundaries were based on a 2026 review published in Nature (Signal Transduction and Targeted Therapy): https://www.nature.com/articles/s41392-025-02549-5
+
 ## Methods
 1. Fetched TP53 protein sequences from NCBI using Biopython's Entrez module
 2. Performed pairwise alignment of each species against the Human reference sequence
 3. Calculated per-position conservation scores across all species
 4. Broke down conservation by known functional domain
-5. Independently validated results using NCBI BLAST
+5. Independently validated results using NCBI BLAST (species-by-species comparison)
 
 ## Key Results
 - Overall average conservation across species: 58.7%
 - Highly conserved positions (≥90% identity): 105 out of 396
-- DNA-binding domain (DBD) showed the highest conservation (70.3%) compared to other functional regions
-- BLAST comparison of the DBD region confirmed high sequence identity (87.36%, E-value = 3e-60)
+- DNA-binding domain (DBD, 95-292) showed the highest conservation (74.1%), followed by the tetramerization domain (65.6%)
+- BLAST comparison of the DBD region (Human vs. each species) confirmed a clear evolutionary gradient:
+  - Mouse: 88.72% identity
+  - Chicken: 72.83% identity
+  - Zebrafish: 71.69% identity
+  - Frog: 68.21% identity
 
 ## Files
-- `TP53_Conversion_Analysis_Final.ipynb` — full analysis notebook
-- `tp53_conservation_plot.png` — conservation plot along the protein
-- `tp53_conservation_by_domain.csv` — conservation scores by functional domain
+- Analysis notebook (.ipynb)
+- Conservation plot along the protein
+- Conservation by functional domain (CSV)
+- BLAST identity bar chart
 
 ## Tools Used
 Python, Biopython (Entrez, SeqIO, Align), pandas, matplotlib, NCBI BLAST
